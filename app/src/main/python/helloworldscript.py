@@ -1,2 +1,5 @@
+import numpy as np
+
 def helloworld():
-    return("Hello, world !")
+    array = [0,1,2,3]
+    return(np.min(array))

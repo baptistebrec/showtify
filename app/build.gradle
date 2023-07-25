@@ -10,24 +10,34 @@ android {
 
     defaultConfig {
         applicationId "com.example.showtify"
+
+        python {
+            pip {
+                install "numpy"
+            }
+        }
+
+        sourceSets {
+            main {
+                python {
+                    srcDirs= ["src/main/python"]
+                }
+            }
+        }
+
         minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"
 
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
         }
+
         python {
-            buildPython "C:/Users/bbrec/AppData/Local/Programs/Python/Python311/python.exe", "-3.8"
-        }
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    sourceSets {
-        main {
-            python.srcDir "src/main/python"
+            buildPython "C:/Users/bbrec/AppData/Local/Programs/Python/Python311/python.exe"
         }
     }
 
